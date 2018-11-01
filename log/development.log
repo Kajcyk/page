@@ -7114,3 +7114,140 @@ Processing by ZdjeciesController#index as HTML
 Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.9ms)
 
 
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <main> at /home/kajcyk/Desktop/kurs/projekty/page/config/routes.rb:5)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <main> at /home/kajcyk/Desktop/kurs/projekty/page/config/routes.rb:5)
+Started GET "/galeries" for 127.0.0.1 at 2018-11-01 11:54:17 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/kajcyk/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GaleriesController#index as HTML
+  Rendering galeries/index.html.erb within layouts/admin
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "galeries"[0m
+  ↳ app/views/galeries/index.html.erb:5
+  [1m[36mGalerie Load (0.2ms)[0m  [1m[34mSELECT "galeries".* FROM "galeries" ORDER BY galeries.pozycja ASC[0m
+  ↳ app/views/galeries/index.html.erb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ?[0m  [["galerie_id", 1]]
+  ↳ app/views/galeries/index.html.erb:19
+  Rendered galeries/index.html.erb within layouts/admin (69.0ms)
+Completed 200 OK in 316ms (Views: 296.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/zdjecies?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:20 +0100
+Processing by ZdjeciesController#index as HTML
+  Parameters: {"galerie_id"=>"1"}
+  [1m[36mGalerie Load (0.3ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  Rendering zdjecies/index.html.erb within layouts/admin
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ?[0m  [["galerie_id", 1]]
+  ↳ app/views/zdjecies/index.html.erb:6
+  [1m[36mZdjecie Load (0.3ms)[0m  [1m[34mSELECT "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ? ORDER BY zdjecies.pozycja ASC[0m  [["galerie_id", 1]]
+  ↳ app/views/zdjecies/index.html.erb:16
+  Rendered zdjecies/index.html.erb within layouts/admin (22.2ms)
+Completed 200 OK in 56ms (Views: 51.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/zdjecies/pokaz/1?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:29 +0100
+Processing by ZdjeciesController#pokaz as HTML
+  Parameters: {"galerie_id"=>"1", "id"=>"1"}
+  [1m[36mGalerie Load (0.5ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  [1m[36mZdjecie Load (0.3ms)[0m  [1m[34mSELECT  "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:31
+  Rendering zdjecies/pokaz.html.erb within layouts/admin
+  [1m[36mGalerie Load (0.1ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/zdjecies/pokaz.html.erb:6
+  Rendered zdjecies/pokaz.html.erb within layouts/admin (4.7ms)
+Completed 200 OK in 51ms (Views: 44.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/galeries" for 127.0.0.1 at 2018-11-01 11:54:31 +0100
+Processing by GaleriesController#index as HTML
+  Rendering galeries/index.html.erb within layouts/admin
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "galeries"[0m
+  ↳ app/views/galeries/index.html.erb:5
+  [1m[36mGalerie Load (0.1ms)[0m  [1m[34mSELECT "galeries".* FROM "galeries" ORDER BY galeries.pozycja ASC[0m
+  ↳ app/views/galeries/index.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ?[0m  [["galerie_id", 1]]
+  ↳ app/views/galeries/index.html.erb:19
+  Rendered galeries/index.html.erb within layouts/admin (4.6ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/zdjecies?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:33 +0100
+Processing by ZdjeciesController#index as HTML
+  Parameters: {"galerie_id"=>"1"}
+  [1m[36mGalerie Load (0.2ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  Rendering zdjecies/index.html.erb within layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ?[0m  [["galerie_id", 1]]
+  ↳ app/views/zdjecies/index.html.erb:6
+  [1m[36mZdjecie Load (0.3ms)[0m  [1m[34mSELECT "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ? ORDER BY zdjecies.pozycja ASC[0m  [["galerie_id", 1]]
+  ↳ app/views/zdjecies/index.html.erb:16
+  Rendered zdjecies/index.html.erb within layouts/admin (8.3ms)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/zdjecies/edycja/2?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:38 +0100
+Processing by ZdjeciesController#edycja as HTML
+  Parameters: {"galerie_id"=>"1", "id"=>"2"}
+  [1m[36mGalerie Load (0.4ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  [1m[36mZdjecie Load (1.1ms)[0m  [1m[34mSELECT  "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "zdjecies"[0m
+  ↳ app/controllers/zdjecies_controller.rb:36
+  Rendering zdjecies/edycja.html.erb within layouts/admin
+  Rendered dodatki/_bledy.html.erb (0.5ms)
+  [1m[36mGalerie Load (0.3ms)[0m  [1m[34mSELECT "galeries".* FROM "galeries" ORDER BY pozycja ASC[0m
+  ↳ app/views/zdjecies/_form.html.erb:6
+  Rendered zdjecies/_form.html.erb (48.8ms)
+  Rendered zdjecies/edycja.html.erb within layouts/admin (52.3ms)
+Completed 200 OK in 121ms (Views: 113.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/zdjecies/aktualizuj/2?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:44 +0100
+Processing by ZdjeciesController#aktualizuj as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0to9AWZqOXxtDwLS6iuJ2h0SYJx3GHxHqFWiwJRBWfRwJDx8lBM9OlWfbDQu9y27I+KHTk3dLfrcRRtP/PX8Sw==", "zdjecia"=>{"galerie_id"=>"1", "nazwa"=>"Zaczarowany ogród ", "pozycja"=>"2", "widoczne"=>"1", "created_at(1i)"=>"2018", "created_at(2i)"=>"11", "created_at(3i)"=>"1", "created_at(4i)"=>"08", "created_at(5i)"=>"58", "opis"=>"Kolejny kwiat"}, "commit"=>"aktualizuj", "galerie_id"=>"1", "id"=>"2"}
+  [1m[36mGalerie Load (0.2ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  [1m[36mZdjecie Load (0.1ms)[0m  [1m[34mSELECT  "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/zdjecies_controller.rb:42
+  [1m[36mGalerie Load (0.3ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:42
+  [1m[36mZdjecie Update (0.4ms)[0m  [1m[33mUPDATE "zdjecies" SET "nazwa" = ?, "updated_at" = ? WHERE "zdjecies"."id" = ?[0m  [["nazwa", "Zaczarowany ogród "], ["updated_at", "2018-11-01 10:54:44.358864"], ["id", 2]]
+  ↳ app/controllers/zdjecies_controller.rb:42
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/zdjecies_controller.rb:42
+Redirected to http://localhost:3000/zdjecies/pokaz/2?galerie_id=1
+Completed 302 Found in 17ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/zdjecies/pokaz/2?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:44 +0100
+Processing by ZdjeciesController#pokaz as HTML
+  Parameters: {"galerie_id"=>"1", "id"=>"2"}
+  [1m[36mGalerie Load (0.2ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  [1m[36mZdjecie Load (0.2ms)[0m  [1m[34mSELECT  "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:31
+  Rendering zdjecies/pokaz.html.erb within layouts/admin
+  [1m[36mGalerie Load (0.2ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/zdjecies/pokaz.html.erb:6
+  Rendered zdjecies/pokaz.html.erb within layouts/admin (4.7ms)
+Completed 200 OK in 79ms (Views: 75.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/zdjecies?galerie_id=1" for 127.0.0.1 at 2018-11-01 11:54:47 +0100
+Processing by ZdjeciesController#index as HTML
+  Parameters: {"galerie_id"=>"1"}
+  [1m[36mGalerie Load (0.2ms)[0m  [1m[34mSELECT  "galeries".* FROM "galeries" WHERE "galeries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/zdjecies_controller.rb:70
+  Rendering zdjecies/index.html.erb within layouts/admin
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ?[0m  [["galerie_id", 1]]
+  ↳ app/views/zdjecies/index.html.erb:6
+  [1m[36mZdjecie Load (0.2ms)[0m  [1m[34mSELECT "zdjecies".* FROM "zdjecies" WHERE "zdjecies"."galerie_id" = ? ORDER BY zdjecies.pozycja ASC[0m  [["galerie_id", 1]]
+  ↳ app/views/zdjecies/index.html.erb:16
+  Rendered zdjecies/index.html.erb within layouts/admin (5.9ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.7ms)
+
+
