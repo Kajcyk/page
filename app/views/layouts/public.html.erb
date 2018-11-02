@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Szkolenia <%= "  |  #{@tytul_strony}" if @tytul_strony %></title>
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+    <%= javascript_include_tag('application') %>
+  </head>
+  <body>
+
+    <!-- nawigacja początek -->
+
+      <%= render(:partial=>"menu")%>
+
+    <!-- nawigacja koniec -->
+
+    <!-- treść strony początek -->
+      <div id="content">
+        <%= yield%>
+      </div>
+
+    <!-- treść strony koniec -->
+
+    <!-- stopka początek -->
+      <div id="footer">
+        <br>StrefaKursów 2018 &copy; <a href="http://www.strefakursow.pl" target="_blank">StrefaKursów</a>
+      </div>
+
+    <!-- stopka koniec -->
+  </body>
+</html>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "kategories#index"
+  root "public#index"
   get 'admin', :to => "dostep#index"
   # Match wiążę controller, akcje i parametr id i korzystam z metod get i post
   match ':controller(/:action(/:id))', :via => [:get, :post] # rooting domyślny
